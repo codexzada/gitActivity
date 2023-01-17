@@ -1,0 +1,76 @@
+git init
+git user.name "?"
+git user.email "?"
+touch .gitignore
+git add ./?
+git commit -m "?"
+
+git commit --amend --no-edit
+git reset --hard
+
+
+git remote -v (checa se tem repositorio remoto)
+git remote set-url origin url (att url)
+
+git pull (pega dados do remoto)
+git push (envia dados pro remoto)
+
+git clone url, local (copia o diretorio)
+
+ssh-keygen (gera chave ssh)
+cd ~/.ssh/ (vai pra pasta ssh)
+start . (abre a pasta)
+eval $(ssh-agent) (cria acesso)
+ssh-add ~/.ssh/nomedoarquivo
+
+code "arq_name" or . (all_arq)/ (abre o conteudo do repositorio)
+
+--------------------
+branches
+git branch
+git branch --list
+git branch "nome"
+git checkout "branch_name"
+git checkout -b "branch_name"
+git switch -c "branch_name"
+git branch -d (deletar branch local) "nome_branch"
+git push --delete origin "branch_name" (apagar branch no server)
+git branch -m "branch_name" "new_name"
+
+git push --set-upstream origin "nome da branch" (upa a branch no server)
+git push -u "nome da branch" (upa a branch no server)
+
+-----------
+merge
+git merge "branch_name" 
+git branch --no-merged (verifica branchs que nao foram mergeadas)
+git branch --merged(verifica branchs que foram mergeadas)
+git merge --abort/git merge --quit/git reset --hard
+
+------------
+tags
+git tag "tag_name" (cria a tag no local que está) / git tag "tag_name" "local" (cria a tag no local digitado)
+git tag -a -m "descricao" "tag_name"
+git show "tag_name"
+git tag / git tag -l / git tag --list (lista as tags)
+git tag -n
+git push --tags (envia tags pro server)
+git checkout "tag_name" (navegar entre commits)
+git diff "tag_name" "tag_name" (diferenca entre as versoes)
+git tag -d "tag_name" (apagar tag local)
+git push --delete origin "tag_name" (apagar no server)
+-------------
+
+git stash (armazena mudancas sem commits)
+git stash list
+git stash apply (aplica a mudanca)
+git stash pop (aplica o primeiro stash e remove da lista) / git stash pop "stash_name"
+git stash drop "stash_position" (apaga o stash)
+git stash branch "branch_name" "stash_position" (cria branch com a modificacao do stash)
+
+--------------
+COMANDOS INTERMEDIÁRIOS GIT
+git revert head (ou nome do commit)
+git revert head --no-edit (reverte)
+
+git reset --hard HEAD~? (desfaz um commit)
