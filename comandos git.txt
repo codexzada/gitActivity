@@ -5,9 +5,9 @@ touch .gitignore
 git add ./?
 git commit -m "?"
 
+git commit -a -m "?" (add e commita)
 git commit --amend --no-edit
 git reset --hard
-
 
 git remote -v (checa se tem repositorio remoto)
 git remote set-url origin url (att url)
@@ -74,3 +74,32 @@ git revert head (ou nome do commit)
 git revert head --no-edit (reverte)
 
 git reset --hard HEAD~? (desfaz um commit)
+git reset --mixed HEAD~? (desfaz um commit mantendo alteracoes)
+git reset --soft HEAD~? (desfaz commit mas mantem em area de prep)
+
+git push --force (subscreve o remoto com o local)
+git push --force-with-lease (sem perder mudancas)
+
+git rebase "branch_name" (pega as alteracoes de uma branch para atualizar a atual/sobreescreve historico)
+git rebase --abort (caso haja conflito)
+git pull --rebase
+git rebase --interactive HEAD~?   (squash fundir os commits)
+
+git fetch (tras mudancas do server pro local) (investiga antes de alterar)
+git branch -a
+
+git cherry-pick "hash_commit"
+
+git bisect start
+git bisect good "commit_hash"
+git bisect bad "commit_hash" (busca erros no projeto)
+-------------
+UTILIDADES
+
+git alias
+git config --global alias.? "comando associado" (abrevia comandos)
+git config --global alias.? 'comando em aspaas simples, ex: log --oneline'
+git config --global --unset alias.? (desfaz atalho do comando)
+
+git branch | grep "titulo das branchs" (filtra as branchs pelo titulo associado)
+git log --oneline | grep "?"
